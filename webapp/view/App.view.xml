@@ -1,0 +1,32 @@
+<mvc:View
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        controllerName="phoenix.starter.controller.App"
+        displayBlock="true">
+    <App id="idAppControl">
+        <Page backgroundDesign="Solid" floatingFooter="true">
+            <!--template code START, must be deleted -->
+            <headerContent>
+                <Toolbar>
+                    <ToolbarSpacer/>
+                    <Title class="phoenixTitle" text="THE PHOENIX HAS RISEN!"/>
+                    <ToolbarSpacer/>
+                </Toolbar>
+            </headerContent>
+            <content>
+                <VBox class="phoenixContent">
+                    <Image class="phoenixCenterImage" src="img/phoenixjslogo.png"/>
+                    <FormattedText htmlText="{/HTML}"/>
+                </VBox>
+            </content>
+			<!--
+            <footer>
+                <OverflowToolbar>
+                    <ToolbarSpacer/>
+                    <Button text="Check Mockserver" press="test"/>
+                </OverflowToolbar>
+            </footer>
+			-->
+        </Page>
+    </App>
+</mvc:View>

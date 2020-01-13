@@ -1,0 +1,34 @@
+specVersion: "1.0"
+metadata:
+  name: ui5-tooling-sample
+type: application
+resources:
+  configuration:
+    paths:
+      webapp: dist
+server:
+  customMiddleware:
+    # proxy to ui5 resources
+    - name: ui5-middleware-http-proxy
+      mountPath: /resources
+      beforeMiddleware: compression
+      configuration:
+        baseUrl: https://ui5.sap.com
+        path: /1.56.7/resources
+        secure: false
+    # proxy to odata service
+    - name: ui5-middleware-http-proxy
+      mountPath: /sap/opu/odata
+      beforeMiddleware: compression
+      configuration:
+        baseUrl: https://vhostdd3.awscloud.msg.de:8443
+        path: /sap/opu/odata
+        secure: false
+    # proxy to lrep service
+    - name: ui5-middleware-http-proxy
+      mountPath: /sap/bc/lrep
+      beforeMiddleware: compression
+      configuration:
+        baseUrl: https://vhostdd3.awscloud.msg.de:8443
+        path: /sap/bc/lrep
+        secure: false

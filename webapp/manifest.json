@@ -1,0 +1,48 @@
+{
+  "sap.app": {
+    "id": "phoenix.starter",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "dataSources": {
+      "common": {
+        "uri": "/sap/opu/odata/sap/ODataPhoenix",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {}
+      }
+    },
+    "rootView": {
+      "viewName": "phoenix.starter.view.App",
+      "type": "XML",
+      "id": "idAppControl"
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "phoenix.starter.i18n.i18n"
+        }
+      },
+      "birds": {
+        "dataSource": "common"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/phoenix_starter.css"
+        }
+      ]
+    },
+    "resourceRoots": {}
+  }
+}
